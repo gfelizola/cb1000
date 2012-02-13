@@ -1,0 +1,25 @@
+#site {max-width:1911px; width:100%; margin:0 auto; overflow-x:hidden;}
+
+#header { position:fixed; top:0; width:100%; max-width:1700px; height:55px; background:url(../../img/common/header_bg.png) no-repeat top center; z-index:999; }
+#header .header_content { width:980px; margin:0 auto; }
+#header .header_content .logo_honda { width:101px; height:26px; background:url(../../img/common/logo_honda.png) no-repeat left top; margin-left:25px; margin-top:15px; }
+#header .header_content .logo_cb { width:178px; height:48px; background:url(../../img/common/logo_cb_header.png) no-repeat left top; margin-right:0px; margin-top:8px; }
+#header .header_content a { color:#ffffff; }
+#header .header_content .menu { width:645px; height:25px; margin:14px 0 0 20px; }
+#header .header_content .menu li { float:left; text-align:center; }
+#header .header_content .menu li a { display:block; height:25px; background-position:center top; background-repeat:no-repeat; }
+#header .header_content .menu li a.ativo,
+#header .header_content .menu li a:hover, { background-position:center bottom !important; }
+#header .header_content .menu li a.conceito 	{ width:85px; background-image:url(../../img/common/menu_conceito.jpg); }
+#header .header_content .menu li a.cores 		{ width:75px; background-image:url(../../img/common/menu_cores.jpg); }
+#header .header_content .menu li a.galeria 		{ width:85px; background-image:url(../../img/common/menu_galeria.jpg); }
+#header .header_content .menu li a.downloads 	{ width:100px; background-image:url(../../img/common/menu_download.jpg); }
+#header .header_content .menu li a.especs 		{ width:100px; background-image:url(../../img/common/menu_especs.jpg); }
+#header .header_content .menu li a.como_comprar { width:110px; background-image:url(../../img/common/menu_como_comprar.jpg); }
+#header .header_content .menu li a.cadastrese 	{ width:85px; background-image:url(../../img/common/menu_cadastrese.jpg); }
+
+#content { width:100%; font-family:'Myriad Pro', Arial; }
+#content .tela { height:900px; width:100%; }
+
+#footer { position:fixed; bottom:0; width:100%; max-width:1700px; z-index:999; }
+#footer .logo_asa { width:99px; height:91px; margin:10px; background:url(../../img/common/logo_honda_asa.png) no-repeat left top transparent; }
