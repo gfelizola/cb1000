@@ -21,5 +21,5 @@
 #content { width:100%; font-family:'Myriad Pro', Arial; }
 #content .tela { height:900px; width:100%; }
 
-#footer { position:fixed; bottom:0; width:100%; max-width:1700px; z-index:999; }
+#footer { position:fixed; bottom:0; right:0; z-index:999; }
 #footer .logo_asa { width:99px; height:91px; margin:10px; background:url(../../img/common/logo_honda_asa.png) no-repeat left top transparent; }

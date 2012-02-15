@@ -52,6 +52,10 @@ var Site = {
 			$.scrollTo( $( $(this).attr('href') ) , 800 );
 			//return false;
 		});
+		
+		if( jQuery.browser.mobile ){
+			
+		}
     },
     Generics: {
         OpenExternalModal: function(id, source, w, h, content) {
