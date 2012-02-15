@@ -32,11 +32,26 @@ var Site = {
 		
 		$(window).resize( Site.Resizes );
 		Site.Resizes();
+		
 		Site.Home();
 		Site.Conceito();
 		Site.Cores();
 		Site.Downloads();
 		Site.Galeria();
+		
+		$('ul.menu li a').hover( 
+			function(){
+				$(this).fadeTo(300,0.5);
+			},
+			function(){
+				$(this).fadeTo(300,1);
+			}
+		).each(function(index, element) {
+			//$(this).attr('rel', $(this).attr('href') ).attr('href','javascript:void(0);');
+		}).click(function(e) {
+			$.scrollTo( $( $(this).attr('href') ) , 800 );
+			//return false;
+		});
     },
     Generics: {
         OpenExternalModal: function(id, source, w, h, content) {
@@ -107,6 +122,7 @@ var Site = {
 				'transitionIn'	: 'fade',
 				'transitionOut'	: 'fade',
 				'title'			: this.title,
+				'centerOnScroll': true,
 				'width'			: 680,
 				'height'		: 495,
 				'href'			: this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
@@ -122,7 +138,7 @@ var Site = {
 	}, 
 	
 	Galeria: function(){
-		$("#galeria .imagens .container a").fancybox({
+		$("#galeria .imagens .container a").blend(300).fancybox({
 			'padding'		: 0,
 			'autoScale'		: true,
 			'transitionIn'	: 'fade',

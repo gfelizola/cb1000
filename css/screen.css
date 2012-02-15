@@ -48,7 +48,8 @@
 #galeria .imagens ul.container li ul { width:980px; }
 #galeria .imagens ul.container li ul li{ width:320px; float:left; }
 #galeria .imagens ul.container li ul li a { width:296px; height:296px; background-position:left top; background-repeat:no-repeat; }
-#galeria .imagens ul.container li ul li a:hover { background-position:left bottom; }
+#galeria .imagens ul.container li ul li a:hover,
+#galeria .imagens ul.container li ul li a.hover { background-position:left bottom; }
 #galeria .imagens ul.container li ul li a.foto1 { background-image:url(../img/galeria/galeria_thumb1.png); }
 #galeria .imagens ul.container li ul li a.foto2 { background-image:url(../img/galeria/galeria_thumb2.png); }
 #galeria .imagens ul.container li ul li a.foto3 { background-image:url(../img/galeria/galeria_thumb3.png); }
