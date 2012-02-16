@@ -97,9 +97,9 @@
 .proprietarios .nome_moto { bottom:0; }
 
 .mulheres { background:url(../img/mulheres_bg.jpg) no-repeat center top #000000; height:1000px; }
-.mulheres .bt_opniao { top:440px; width:175px; height:40px; background:url(../img/mulheres_bt_opniao.png) no-repeat left top transparent; }
-.mulheres .bt_opniao a { display:block; width:115px; height:40px; padding-left:60px; color:#ffffff; }
-.mulheres .bt_opniao.bt1 { left:10px; }
+.mulheres .bt_opniao { top:410px; width:185px; height:40px; background:url(../img/mulheres_bt_opniao.png) no-repeat left top transparent; }
+.mulheres .bt_opniao a { display:block; width:125px; height:40px; padding-left:60px; color:#ffffff; }
+.mulheres .bt_opniao.bt1 { left:50px; }
 .mulheres .bt_opniao.bt2 { left:300px; }
 .mulheres .bt_opniao.bt3 { left:500px; }
 .mulheres .opniao { width:500px; padding:10px 40px; background:#ffffff; top:520px; }

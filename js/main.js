@@ -29,33 +29,6 @@ var Site = {
 				return t.linkar("http://search.twitter.com/search?q="+tag);
 			});
 		};
-		
-		$(window).resize( Site.Resizes );
-		Site.Resizes();
-		
-		Site.Home();
-		Site.Conceito();
-		Site.Cores();
-		Site.Downloads();
-		Site.Galeria();
-		
-		$('ul.menu li a').hover( 
-			function(){
-				$(this).fadeTo(300,0.5);
-			},
-			function(){
-				$(this).fadeTo(300,1);
-			}
-		).each(function(index, element) {
-			//$(this).attr('rel', $(this).attr('href') ).attr('href','javascript:void(0);');
-		}).click(function(e) {
-			$.scrollTo( $( $(this).attr('href') ) , 800 );
-			//return false;
-		});
-		
-		if( jQuery.browser.mobile ){
-			
-		}
     },
     Generics: {
         OpenExternalModal: function(id, source, w, h, content) {
@@ -99,6 +72,25 @@ var Site = {
 	},
 	
 	Home: function(){
+		
+		Site.Resizes();
+		
+		Site.Conceito();
+		Site.Cores();
+		Site.Downloads();
+		Site.Galeria();
+		
+		$('ul.menu li a').hover( 
+			function(){
+				$(this).fadeTo(300,0.5);
+			},
+			function(){
+				$(this).fadeTo(300,1);
+			}
+		).click(function(e) {
+			$.scrollTo( $( $(this).attr('href') ) , 800 );
+		});
+		
 		$('#home #mulheres a').hover(
 			function(){
 				$('#home #mulheres').animate({opacity:0.5}, 500);
@@ -176,92 +168,123 @@ var Site = {
 		);
 	},
 	
+	OpniaoMulheres: function(){
+		$(".bt_video").click(function() {
+			$.fancybox({
+				'padding'		: 0,
+				'autoScale'		: false,
+				'transitionIn'	: 'fade',
+				'transitionOut'	: 'fade',
+				'title'			: this.title,
+				'centerOnScroll': true,
+				'width'			: 680,
+				'height'		: 495,
+				'href'			: this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+				'type'			: 'swf',
+				'swf'			: {
+					'wmode'				: 'transparent',
+					'allowfullscreen'	: 'true'
+				}
+			});
+		
+			return false;
+		});	
+	},
+	
 	Resizes: function(){
 		
-		var wind = $(window);
-		var pos = 0 ;
+		function doResize(){
 		
-		//HEADER --------------------------------------------------
-		var header = $('#header');
+			var wind = $(window);
+			var pos = 0 ;
+			
+			//HEADER --------------------------------------------------
+			var header = $('#header');
+			
+			header.css( {left: (wind.width() - header.width() ) / 2 } );
+			var headerWidth = header.width();
+			if( wind.width() > headerWidth ) headerWidth -= 60 ;
+			$('.menu').css({ 'margin-left': ( headerWidth - 920 ) / 2 });
+			
+			//HOME --------------------------------------------------
+			var motoHome = $('#home .moto');
+			pos =  (wind.width() - 570) / 2 ;
+			motoHome.css({ left: pos });
+			
+			var mulheresHome = $('#home #mulheres');
+			mulheresHome.css({ left: pos - 450 });
+			
+			var propsHome = $('#home #proprietarios');
+			propsHome.css({ left: pos + 520 });
+			
+			//CONCEITO --------------------------------------------------
+			var containerVideosConceito = $('#conceito .container_videos');
+			containerVideosConceito.css({ 'margin-left': pos - 420});
+			
+			//CORES --------------------------------------------------
+			var motoCores = $('#cores .moto');
+			motoCores.css({ 'left': pos - 230});
+			
+			var textoCores = $('#cores .texto');
+			textoCores.css({ 'left': pos + 790});
+			
+			var controlesCores = $('#cores .controles');
+			controlesCores.css({ 'left': pos - 230});
+			
+			//GALERIA --------------------------------------------------
+			var textoGaleria = $('#galeria .texto');
+			textoGaleria.css({ 'left': pos - 180});
+			
+			var imagensGaleria = $('#galeria .imagens');
+			imagensGaleria.css({ 'left': pos - 200});
+			
+			//DOWNLOADS --------------------------------------------------
+			var textoDownloads = $('#downloads .texto');
+			textoDownloads.css({ 'left': pos + 150});
+			
+			var conteudoDownloads = $('#downloads .container');
+			conteudoDownloads.css({ 'left': pos - 100});
+			
+			//ESPECS --------------------------------------------------
+			var textoEspecs = $('#especificacoes .texto');
+			textoEspecs.css({ 'left': pos + 360});
+			
+			var conteudoEspecs = $('#especificacoes .container');
+			conteudoEspecs.css({ 'left': pos + 120});
+			
+			//COMO COMPRAR --------------------------------------------------
+			var textoCC = $('#como_comprar .texto');
+			textoCC.css({ 'left': pos + 700});
+			
+			var conteudoEspecs = $('#como_comprar .container');
+			conteudoEspecs.css({ 'left': pos + 460 });
+			
+			//PROPRIETARIOS --------------------------------------------------
+			pos = wind.width() / 2 ;
+			$('.proprietarios .opniao1').css({ 'left': pos });
+			$('.proprietarios .opniao2').css({ 'left': pos - 500 });
+			$('.proprietarios .opniao3').css({ 'left': pos - 200 });
+			
+			//MULHERES --------------------------------------------------
+			$('.mulheres .bt1').css({ 'left': pos - 400 });
+			$('.mulheres .bt2').css({ 'left': pos });
+			$('.mulheres .bt3').css({ 'left': pos + 370 });
+			$('.mulheres .bt_opniao a').click(function(e) {
+				var id = $(this).attr('href');
+				$('.opniao').fadeOut();
+				$(id).fadeIn();
+			});
+			
+			$('.mulheres .opniao .fechar').click(function(e) {
+				$('.opniao').fadeOut();
+			});
+			
+			$('.mulheres #opniao1').css({ 'left': pos - 470 });
+			$('.mulheres #opniao2').css({ 'left': pos - 250 });
+			$('.mulheres #opniao3').css({ 'left': pos - 70 });
+		}
 		
-		header.css( {left: (wind.width() - header.width() ) / 2 } );
-		//$('.menu').css({ 'margin-left': ( header.width() - 940 ) / 2 });
-		
-		//HOME --------------------------------------------------
-		var motoHome = $('#home .moto');
-		pos =  (wind.width() - 570) / 2 ;
-		motoHome.css({ left: pos });
-		
-		var mulheresHome = $('#home #mulheres');
-		mulheresHome.css({ left: pos - 450 });
-		
-		var propsHome = $('#home #proprietarios');
-		propsHome.css({ left: pos + 520 });
-		
-		//CONCEITO --------------------------------------------------
-		var containerVideosConceito = $('#conceito .container_videos');
-		containerVideosConceito.css({ 'margin-left': pos - 420});
-		
-		//CORES --------------------------------------------------
-		var motoCores = $('#cores .moto');
-		motoCores.css({ 'left': pos - 230});
-		
-		var textoCores = $('#cores .texto');
-		textoCores.css({ 'left': pos + 790});
-		
-		var controlesCores = $('#cores .controles');
-		controlesCores.css({ 'left': pos - 230});
-		
-		//GALERIA --------------------------------------------------
-		var textoGaleria = $('#galeria .texto');
-		textoGaleria.css({ 'left': pos - 180});
-		
-		var imagensGaleria = $('#galeria .imagens');
-		imagensGaleria.css({ 'left': pos - 200});
-		
-		//DOWNLOADS --------------------------------------------------
-		var textoDownloads = $('#downloads .texto');
-		textoDownloads.css({ 'left': pos + 150});
-		
-		var conteudoDownloads = $('#downloads .container');
-		conteudoDownloads.css({ 'left': pos - 100});
-		
-		//ESPECS --------------------------------------------------
-		var textoEspecs = $('#especificacoes .texto');
-		textoEspecs.css({ 'left': pos + 360});
-		
-		var conteudoEspecs = $('#especificacoes .container');
-		conteudoEspecs.css({ 'left': pos + 120});
-		
-		//COMO COMPRAR --------------------------------------------------
-		var textoCC = $('#como_comprar .texto');
-		textoCC.css({ 'left': pos + 700});
-		
-		var conteudoEspecs = $('#como_comprar .container');
-		conteudoEspecs.css({ 'left': pos + 460 });
-		
-		//PROPRIETARIOS --------------------------------------------------
-		pos = wind.width() / 2 ;
-		$('.proprietarios .opniao1').css({ 'left': pos });
-		$('.proprietarios .opniao2').css({ 'left': pos - 500 });
-		$('.proprietarios .opniao3').css({ 'left': pos - 200 });
-		
-		//MULHERES --------------------------------------------------
-		$('.mulheres .bt1').css({ 'left': pos - 470 });
-		$('.mulheres .bt2').css({ 'left': pos });
-		$('.mulheres .bt3').css({ 'left': pos + 400 });
-		$('.mulheres .bt_opniao a').click(function(e) {
-			var id = $(this).attr('href');
-			$('.opniao').fadeOut();
-			$(id).fadeIn();
-		});
-		
-		$('.mulheres .opniao .fechar').click(function(e) {
-			$('.opniao').fadeOut();
-		});
-		
-		$('.mulheres #opniao1').css({ 'left': pos - 470 });
-		$('.mulheres #opniao2').css({ 'left': pos - 250 });
-		$('.mulheres #opniao3').css({ 'left': pos - 70 });
+		$(window).resize( doResize );
+		doResize();
 	}
 }
