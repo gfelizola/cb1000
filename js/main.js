@@ -93,9 +93,11 @@ var Site = {
 		
 		$('#home #mulheres a').hover(
 			function(){
+				$('#home #mulheres').clearQueue();
 				$('#home #mulheres').animate({opacity:0.5}, 500);
 			},
 			function(){
+				$('#home #mulheres').clearQueue();
 				$('#home #mulheres').animate({opacity:1}, 500);
 			}
 		);
@@ -107,13 +109,21 @@ var Site = {
 			function(){
 				$('#home #proprietarios').animate({opacity:1}, 500);
 			}
-		);
+		).click(function(e) {
+			$('#proprietarios_embreve').fadeIn();
+		}).attr('href','javascript:void(0);');
+		
+		$('#proprietarios_embreve a').click(function(e) {
+			$('#proprietarios_embreve').fadeOut();
+		});
 	},
 	
 	Conceito: function(){
 		$("#conceito .container_videos .video a").click(function() {
 			$.fancybox({
 				'padding'		: 0,
+				'overlayColor' 	: '#000000',
+				'titleShow'		: false,
 				'autoScale'		: false,
 				'transitionIn'	: 'fade',
 				'transitionOut'	: 'fade',
@@ -136,6 +146,7 @@ var Site = {
 	Galeria: function(){
 		$("#galeria .imagens .container a").blend(300).fancybox({
 			'padding'		: 0,
+			'overlayColor' 	: '#000000',
 			'autoScale'		: true,
 			'transitionIn'	: 'fade',
 			'transitionOut'	: 'fade',
@@ -169,13 +180,30 @@ var Site = {
 	},
 	
 	OpniaoMulheres: function(){
+		
+		$('.mulheres .bt_opniao a').each(function(e) {
+			$(this).attr('rel', $(this).attr('href') ).attr('href','javascript:void(0)').click(function(e) {
+				var id = $(this).attr('rel');
+				if( ! $(id).is(':visible') )
+				{
+					$('.opniao').fadeOut();
+					$(id).fadeIn();
+				}
+			});
+		});
+		
+		$('.mulheres .opniao .fechar').click(function(e) {
+			$('.opniao').fadeOut();
+		});
+		
 		$(".bt_video").click(function() {
 			$.fancybox({
 				'padding'		: 0,
+				'overlayColor' 	: '#000000',
 				'autoScale'		: false,
 				'transitionIn'	: 'fade',
 				'transitionOut'	: 'fade',
-				'title'			: this.title,
+				'titleShow'		: false,
 				'centerOnScroll': true,
 				'width'			: 680,
 				'height'		: 495,
@@ -211,11 +239,14 @@ var Site = {
 			pos =  (wind.width() - 570) / 2 ;
 			motoHome.css({ left: pos });
 			
-			var mulheresHome = $('#home #mulheres');
-			mulheresHome.css({ left: pos - 450 });
+			$('#home #mulheres').css({ left: pos - 450 });
+			$('#home #proprietarios').css({ left: pos + 520 });
 			
-			var propsHome = $('#home #proprietarios');
-			propsHome.css({ left: pos + 520 });
+			var posEmbreve = pos + 520 ;
+			if( posEmbreve + 466 > wind.width() ){
+				posEmbreve = wind.width() - 470 ;
+			}
+			$('#home #proprietarios_embreve').css({ left: posEmbreve });
 			
 			//CONCEITO --------------------------------------------------
 			var containerVideosConceito = $('#conceito .container_videos');
@@ -269,15 +300,6 @@ var Site = {
 			$('.mulheres .bt1').css({ 'left': pos - 400 });
 			$('.mulheres .bt2').css({ 'left': pos });
 			$('.mulheres .bt3').css({ 'left': pos + 370 });
-			$('.mulheres .bt_opniao a').click(function(e) {
-				var id = $(this).attr('href');
-				$('.opniao').fadeOut();
-				$(id).fadeIn();
-			});
-			
-			$('.mulheres .opniao .fechar').click(function(e) {
-				$('.opniao').fadeOut();
-			});
 			
 			$('.mulheres #opniao1').css({ 'left': pos - 470 });
 			$('.mulheres #opniao2').css({ 'left': pos - 250 });

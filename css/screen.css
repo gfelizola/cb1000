@@ -12,6 +12,8 @@
 #home #proprietarios { width: 480px; right:10%; top:150px; }
 #home #proprietarios .props { margin-left:75px; }
 #home #proprietarios .txt_props { margin:55px 0 0 0; }
+#home #proprietarios_embreve { width:466px; height:217px; top:300px; background:url(../img/proprietario_embreve.png) no-repeat left top; }
+#home #proprietarios_embreve a.fechar_embreve { width:40px; height:40px; }
 
 #conceito { background:url(../img/conceito_bg.jpg) no-repeat top center; }
 #conceito .container_videos { width:590px; }
