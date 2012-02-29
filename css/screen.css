@@ -27,7 +27,7 @@
 #conceito .container_videos .video3 p { margin:25px 25px; }
 
 #cores { background:url(../img/cores_bg.jpg) no-repeat center -200px;; height:1040px !important; }
-#cores .texto { width:190px; font-family:'Myriad Pro', Arial; top:410px;  }
+#cores .texto { width:190px; font-family:'Myriad Pro', Arial; top:310px;  }
 #cores .texto h2 { font-size:48px; text-transform:uppercase; color:#38435e; }
 #cores .texto p { font-size:12px; color:#cccccc; margin-bottom:8px; margin-left:5px; }
 #cores .texto p.subtitulo { text-transform:uppercase; }
@@ -45,11 +45,11 @@
 #galeria .imagens ul.container { width:980px; }
 #galeria .imagens ul.container li { width:980px; }
 #galeria .imagens ul.container li.linha1 { top:0; left:0; }
-#galeria .imagens ul.container li.linha2 { top:160px; left:160px;; }
-#galeria .imagens ul.container li.linha3 { top:320px; left:320px;; }
+#galeria .imagens ul.container li.linha2 { top:145px; left:144px;; }
+#galeria .imagens ul.container li.linha3 { top:290px; left:287px;; }
 #galeria .imagens ul.container li ul { width:980px; }
-#galeria .imagens ul.container li ul li{ width:320px; float:left; }
-#galeria .imagens ul.container li ul li a { width:296px; height:296px; background-position:left top; background-repeat:no-repeat; }
+#galeria .imagens ul.container li ul li{ width:290px; float:left; }
+#galeria .imagens ul.container li ul li a { width:270px; height:270px; background-position:left top; background-repeat:no-repeat; }
 #galeria .imagens ul.container li ul li a:hover,
 #galeria .imagens ul.container li ul li a.hover { background-position:left bottom; }
 #galeria .imagens ul.container li ul li a.foto1 { background-image:url(../img/galeria/galeria_thumb1.png); }
@@ -98,13 +98,13 @@
 .proprietarios .fechar { top:50px; right:50px; background:url(../img/bt_fechar.png) no-repeat center center transparent; width:62px; height:65px; }
 .proprietarios .nome_moto { bottom:0; }
 
-.mulheres { background:url(../img/mulheres_bg.jpg) no-repeat center top #000000; height:1000px; }
+.mulheres { background:url(../img/mulheres_bg.jpg) no-repeat center top #000000; height:800px; }
 .mulheres .bt_opniao { top:410px; width:185px; height:40px; background:url(../img/mulheres_bt_opniao.png) no-repeat left top transparent; }
 .mulheres .bt_opniao a { display:block; width:125px; height:40px; padding-left:60px; color:#ffffff; }
 .mulheres .bt_opniao.bt1 { left:50px; }
 .mulheres .bt_opniao.bt2 { left:300px; }
 .mulheres .bt_opniao.bt3 { left:500px; }
-.mulheres .opniao { width:500px; padding:10px 40px; background:#ffffff; top:520px; }
+.mulheres .opniao { width:500px; padding:10px 40px; background:#ffffff; top:480px; }
 .mulheres .opniao .nome { color:#000000; font-size:26px; margin-bottom:30px; }
 .mulheres .opniao iframe { float:left; margin:6px 0 0 15px; }
 .mulheres .opniao p { float:left; width:100%; color:#666666; margin-bottom:20px; }
@@ -112,4 +112,4 @@
 .mulheres .opniao .fechar { top:0; right:-36px; background:url(../img/mulheres_fechar_opniao.jpg) no-repeat top left; }
 .mulheres .opniao .bt_video { bottom:30px; right:0px; width:200px; background:url(../img/mulheres_ico_seta.jpg) no-repeat top left; text-transform:uppercase; padding-left:20px; color:#000000; }
 .mulheres .fechar { top:90px; right:50px; background:url(../img/bt_fechar.png) no-repeat center center transparent; width:62px; height:65px; }
-.mulheres .nome_moto { bottom:0; }
+.mulheres .nome_moto { left:0; bottom:0; }

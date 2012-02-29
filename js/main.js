@@ -250,14 +250,14 @@ var Site = {
 			
 			//CONCEITO --------------------------------------------------
 			var containerVideosConceito = $('#conceito .container_videos');
-			containerVideosConceito.css({ 'margin-left': pos - 420});
+			containerVideosConceito.css({ 'margin-left': pos - 200});
 			
 			//CORES --------------------------------------------------
 			var motoCores = $('#cores .moto');
 			motoCores.css({ 'left': pos - 230});
 			
 			var textoCores = $('#cores .texto');
-			textoCores.css({ 'left': pos + 790});
+			textoCores.css({ 'left': pos + 620});
 			
 			var controlesCores = $('#cores .controles');
 			controlesCores.css({ 'left': pos - 230});
@@ -274,7 +274,7 @@ var Site = {
 			textoDownloads.css({ 'left': pos + 150});
 			
 			var conteudoDownloads = $('#downloads .container');
-			conteudoDownloads.css({ 'left': pos - 100});
+			conteudoDownloads.css({ 'left': pos - 130});
 			
 			//ESPECS --------------------------------------------------
 			var textoEspecs = $('#especificacoes .texto');
@@ -285,10 +285,10 @@ var Site = {
 			
 			//COMO COMPRAR --------------------------------------------------
 			var textoCC = $('#como_comprar .texto');
-			textoCC.css({ 'left': pos + 700});
+			textoCC.css({ 'left': pos + 600});
 			
-			var conteudoEspecs = $('#como_comprar .container');
-			conteudoEspecs.css({ 'left': pos + 460 });
+			var conteudoCC = $('#como_comprar .container');
+			conteudoCC.css({ 'left': pos + 380 });
 			
 			//PROPRIETARIOS --------------------------------------------------
 			pos = wind.width() / 2 ;
@@ -303,7 +303,7 @@ var Site = {
 			
 			$('.mulheres #opniao1').css({ 'left': pos - 470 });
 			$('.mulheres #opniao2').css({ 'left': pos - 250 });
-			$('.mulheres #opniao3').css({ 'left': pos - 70 });
+			$('.mulheres #opniao3').css({ 'left': pos - 100 });
 		}
 		
 		$(window).resize( doResize );
