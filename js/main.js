@@ -235,12 +235,10 @@ var Site = {
 			$('.menu').css({ 'margin-left': ( headerWidth - 920 ) / 2 });
 			
 			//HOME --------------------------------------------------
-			var motoHome = $('#home .moto');
 			pos =  (wind.width() - 570) / 2 ;
-			motoHome.css({ left: pos });
 			
-			$('#home #mulheres').css({ left: pos - 450 });
-			$('#home #proprietarios').css({ left: pos + 520 });
+			$('#home #mulheres').css({ left: pos - 300 });
+			$('#home #proprietarios').css({ left: pos + 450 });
 			
 			var posEmbreve = pos + 520 ;
 			if( posEmbreve + 466 > wind.width() ){
@@ -257,14 +255,14 @@ var Site = {
 			motoCores.css({ 'left': pos - 230});
 			
 			var textoCores = $('#cores .texto');
-			textoCores.css({ 'left': pos + 620});
+			textoCores.css({ 'left': pos + 600});
 			
 			var controlesCores = $('#cores .controles');
 			controlesCores.css({ 'left': pos - 230});
 			
 			//GALERIA --------------------------------------------------
 			var textoGaleria = $('#galeria .texto');
-			textoGaleria.css({ 'left': pos - 180});
+			textoGaleria.css({ 'left': pos + 80});
 			
 			var imagensGaleria = $('#galeria .imagens');
 			imagensGaleria.css({ 'left': pos - 200});
@@ -285,7 +283,7 @@ var Site = {
 			
 			//COMO COMPRAR --------------------------------------------------
 			var textoCC = $('#como_comprar .texto');
-			textoCC.css({ 'left': pos + 600});
+			textoCC.css({ 'left': pos + 530});
 			
 			var conteudoCC = $('#como_comprar .container');
 			conteudoCC.css({ 'left': pos + 380 });
