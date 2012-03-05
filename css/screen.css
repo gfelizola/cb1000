@@ -4,12 +4,12 @@
 @import url("common/structure.css");
 /* -- Fim dos Estilos Importados -- */
 
-#home { background:url(../img/home_bg.jpg) no-repeat top center; }
+#home { background:url(../img/home_bg.jpg) no-repeat center -50px; }
 #home #mulheres { width: 480px; left:10%; top:165px; }
-#home #mulheres .txt_mulheres { margin-left:120px; padding-top:310px; }
+#home #mulheres .txt_mulheres { margin-left:150px; padding-top:210px; }
 #home .moto { width: 570px; left:35%; top:150px; }
 #home #proprietarios { width: 480px; right:10%; top:150px; }
-#home #proprietarios .txt_props { margin:55px 0 0 0; padding-top:270px; }
+#home #proprietarios .txt_props { margin:55px 0 0 40px; padding-top:168px; }
 #home #proprietarios_embreve { width:466px; height:217px; top:300px; background:url(../img/proprietario_embreve.png) no-repeat left top; }
 #home #proprietarios_embreve a.fechar_embreve { width:40px; height:40px; }
 
